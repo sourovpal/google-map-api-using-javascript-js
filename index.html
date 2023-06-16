@@ -1,0 +1,40 @@
+
+
+<div id="googleMap" style="width:500px;height:500px;"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcEDtQbw9CpH8C1hYp7kmujHnOroEez-Y&callback=initMap" async defer></script>
+
+<script>
+
+function initMap() {
+    var latlng = new google.maps.LatLng(24.747599432586004, 90.41975590873496); //Set the default location of map
+                
+            var map = new google.maps.Map(document.getElementById('googleMap'), {
+                        
+                center: latlng,
+    
+                zoom: 11, //The zoom value for map
+                
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+                
+            });
+    
+            var marker = new google.maps.Marker({
+                
+                position: latlng,
+                
+                map: map,
+                
+                title: 'Place the marker for your location!', //The title on hover to display
+                
+                draggable: true //this makes it drag and drop
+                
+            });
+    
+            google.maps.event.addListener(marker, 'dragend', function(a) {
+                
+                
+            });
+    }
+
+  </script>
